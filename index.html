@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sezim Space</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-blur"></div>
+
+  <header class="hero">
+    <h1>Sezim Space 🤍</h1>
+    <p>
+      Көңіл күйіңді сез, жылы сөз ал, жақындарыңа мейірім тарат.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="card camera-card">
+      <h2>Камера арқылы эмоция</h2>
+      <p class="section-text">
+        Камераны қосып, эмоцияңды байқап көр. Егер камера ашылмаса,
+        төмендегі батырмалардан эмоцияны қолмен таңдауға болады.
+      </p>
+
+      <div class="camera-wrapper">
+        <video id="video" autoplay playsinline muted></video>
+        <div class="camera-overlay">Сезімің осында көрінеді ✨</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="startCameraBtn" class="primary-btn">Камераны қосу</button>
+        <button id="stopCameraBtn" class="secondary-btn">Камераны тоқтату</button>
+      </div>
+
+      <div class="manual-emotions">
+        <p>Немесе эмоцияны таңда:</p>
+        <div class="emotion-buttons">
+          <button class="emotion-btn" data-emotion="қуаныш">Қуаныш</button>
+          <button class="emotion-btn" data-emotion="мұң">Мұң</button>
+          <button class="emotion-btn" data-emotion="шаршау">Шаршау</button>
+          <button class="emotion-btn" data-emotion="қобалжу">Қобалжу</button>
+          <button class="emotion-btn" data-emotion="тыныштық">Тыныштық</button>
+          <button class="emotion-btn" data-emotion="таңғалу">Таңғалу</button>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <h3>Анықталған эмоция:</h3>
+        <p id="emotionResult">Әлі анықталған жоқ</p>
+        <p id="emotionMessage" class="emotion-message">
+          Мұнда саған арналған жылы сөз шығады 🤍
+        </p>
+      </div>
+    </section>
+
+    <section class="card mood-diary-card">
+      <h2>Көңіл күй күнделігі</h2>
+      <p class="section-text">
+        Соңғы анықталған эмоциялар осында сақталады.
+      </p>
+      <ul id="moodDiaryList" class="mood-list"></ul>
+      <button id="clearDiaryBtn" class="secondary-btn">Күнделікті тазалау</button>
+    </section>
+
+    <section class="card warm-card">
+      <h2>Бүгінгі жылы сөз</h2>
+      <p id="dailyWarmText" class="daily-text"></p>
+      <button id="newWarmTextBtn" class="primary-btn">Тағы бір жылы сөз</button>
+    </section>
+
+    <section class="card breathing-card">
+      <h2>Тыныс алу режимі</h2>
+      <p class="section-text">
+        Егер шаршау немесе қобалжу болса, кішкентай демалыс жасап көр.
+      </p>
+      <div class="breathing-circle" id="breathingCircle">
+        Дем ал
+      </div>
+    </section>
+
+    <section class="card message-card">
+      <h2>Жақын адамға сәлемдеме</h2>
+      <p class="section-text">
+        Жақын адамыңа жылы сөз жазып, әдемі карточка жаса.
+      </p>
+
+      <form id="messageForm" class="message-form">
+        <input
+          type="text"
+          id="recipientName"
+          placeholder="Кімге?"
+          maxlength="40"
+          required
+        />
+        <textarea
+          id="messageText"
+          placeholder="Жылы сөз немесе тілек жаз..."
+          maxlength="220"
+          required
+        ></textarea>
+        <button type="submit" class="primary-btn">Карточка жасау</button>
+      </form>
+
+      <div id="messagePreview" class="message-preview hidden">
+        <h3>Сәлемдеме карточкасы</h3>
+        <div class="postcard">
+          <p class="to-line">Кімге: <span id="previewName"></span></p>
+          <p class="postcard-text" id="previewText"></p>
+          <p class="postcard-sign">Жүректен 🤍</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card wall-card">
+      <h2>Жақсылық қабырғасы</h2>
+      <p class="section-text">
+        Мұнда кез келген адам жылы сөз қалдыра алады.
+      </p>
+
+      <form id="wallForm" class="wall-form">
+        <textarea
+          id="wallText"
+          placeholder="Жылы сөз қалдыр..."
+          maxlength="180"
+          required
+        ></textarea>
+        <button type="submit" class="primary-btn">Қосу</button>
+      </form>
+
+      <div id="wallList" class="wall-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Sezim Space • Жылулық пен мейірімге толы орта 🤍</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
