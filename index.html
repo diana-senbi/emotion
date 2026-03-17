@@ -11,9 +11,7 @@
 
   <header class="hero">
     <h1>Sezim Space 🤍</h1>
-    <p>
-      Көңіл күйіңді сез, жылы сөз ал, жақындарыңа мейірім тарат.
-    </p>
+    <p>Көңіл күйіңді сез, жылы сөз ал, жақындарыңа мейірім тарат.</p>
   </header>
 
   <main class="container">
@@ -29,20 +27,22 @@
         <div class="camera-overlay">Сезімің осында көрінеді ✨</div>
       </div>
 
+      <p id="cameraStatus" class="camera-status">Камера әлі қосылған жоқ</p>
+
       <div class="btn-row">
-        <button id="startCameraBtn" class="primary-btn">Камераны қосу</button>
-        <button id="stopCameraBtn" class="secondary-btn">Камераны тоқтату</button>
+        <button id="startCameraBtn" class="primary-btn" type="button">Камераны қосу</button>
+        <button id="stopCameraBtn" class="secondary-btn" type="button">Камераны тоқтату</button>
       </div>
 
       <div class="manual-emotions">
         <p>Немесе эмоцияны таңда:</p>
         <div class="emotion-buttons">
-          <button class="emotion-btn" data-emotion="қуаныш">Қуаныш</button>
-          <button class="emotion-btn" data-emotion="мұң">Мұң</button>
-          <button class="emotion-btn" data-emotion="шаршау">Шаршау</button>
-          <button class="emotion-btn" data-emotion="қобалжу">Қобалжу</button>
-          <button class="emotion-btn" data-emotion="тыныштық">Тыныштық</button>
-          <button class="emotion-btn" data-emotion="таңғалу">Таңғалу</button>
+          <button class="emotion-btn" data-emotion="қуаныш" type="button">Қуаныш</button>
+          <button class="emotion-btn" data-emotion="мұң" type="button">Мұң</button>
+          <button class="emotion-btn" data-emotion="шаршау" type="button">Шаршау</button>
+          <button class="emotion-btn" data-emotion="қобалжу" type="button">Қобалжу</button>
+          <button class="emotion-btn" data-emotion="тыныштық" type="button">Тыныштық</button>
+          <button class="emotion-btn" data-emotion="таңғалу" type="button">Таңғалу</button>
         </div>
       </div>
 
@@ -57,27 +57,33 @@
 
     <section class="card mood-diary-card">
       <h2>Көңіл күй күнделігі</h2>
-      <p class="section-text">
-        Соңғы анықталған эмоциялар осында сақталады.
-      </p>
+      <p class="section-text">Соңғы анықталған эмоциялар осында сақталады.</p>
       <ul id="moodDiaryList" class="mood-list"></ul>
-      <button id="clearDiaryBtn" class="secondary-btn">Күнделікті тазалау</button>
+      <button id="clearDiaryBtn" class="secondary-btn" type="button">Күнделікті тазалау</button>
     </section>
 
     <section class="card warm-card">
       <h2>Бүгінгі жылы сөз</h2>
       <p id="dailyWarmText" class="daily-text"></p>
-      <button id="newWarmTextBtn" class="primary-btn">Тағы бір жылы сөз</button>
+      <button id="newWarmTextBtn" class="primary-btn" type="button">Тағы бір жылы сөз</button>
     </section>
 
     <section class="card breathing-card">
       <h2>Тыныс алу режимі</h2>
       <p class="section-text">
-        Егер шаршау немесе қобалжу болса, кішкентай демалыс жасап көр.
+        Қобалжу немесе шаршау болса, осы режиммен аздап тынышталып ал.
       </p>
+
       <div class="breathing-circle" id="breathingCircle">
-        Дем ал
+        <span id="breathingText">Дем ал</span>
       </div>
+
+      <div class="btn-row breathing-buttons">
+        <button id="startBreathingBtn" class="primary-btn" type="button">Бастау</button>
+        <button id="stopBreathingBtn" class="secondary-btn" type="button">Тоқтату</button>
+      </div>
+
+      <p id="breathingStatus" class="breathing-status">Режим әлі басталған жоқ</p>
     </section>
 
     <section class="card message-card">
@@ -105,7 +111,15 @@
 
       <div id="messagePreview" class="message-preview hidden">
         <h3>Сәлемдеме карточкасы</h3>
+
         <div class="postcard">
+          <div class="flower flower-1">🌸</div>
+          <div class="flower flower-2">🌷</div>
+          <div class="flower flower-3">🌺</div>
+          <div class="butterfly butterfly-1">🦋</div>
+          <div class="butterfly butterfly-2">🦋</div>
+
+          <p class="postcard-top">Арнайы жылы сәлемдеме 🤍</p>
           <p class="to-line">Кімге: <span id="previewName"></span></p>
           <p class="postcard-text" id="previewText"></p>
           <p class="postcard-sign">Жүректен 🤍</p>
@@ -115,9 +129,7 @@
 
     <section class="card wall-card">
       <h2>Жақсылық қабырғасы</h2>
-      <p class="section-text">
-        Мұнда кез келген адам жылы сөз қалдыра алады.
-      </p>
+      <p class="section-text">Мұнда кез келген адам жылы сөз қалдыра алады.</p>
 
       <form id="wallForm" class="wall-form">
         <textarea
