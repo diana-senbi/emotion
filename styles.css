@@ -299,10 +299,9 @@ textarea:focus {
 
 .premium-postcard {
   min-height: 340px;
-  padding: 30px 24px;
+  padding: 30px 24px 24px 95px;
   border-radius: 30px;
-  background:
-    linear-gradient(145deg, #ffd9e8 0%, #ffeaf3 35%, #fff7fb 70%, #ffe3ef 100%);
+  background: linear-gradient(145deg, #ffd9e8 0%, #ffeaf3 35%, #fff7fb 70%, #ffe3ef 100%);
   border: 2px solid rgba(255, 190, 220, 0.9);
   box-shadow:
     0 20px 45px rgba(236, 159, 194, 0.25),
@@ -379,8 +378,8 @@ textarea:focus {
 }
 
 .message-bubble {
-  background: rgba(255,255,255,0.56);
-  border: 1.5px solid rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.65);
+  border: 1.5px solid rgba(255,255,255,0.78);
   border-radius: 22px;
   padding: 16px 18px;
   backdrop-filter: blur(8px);
@@ -414,36 +413,36 @@ textarea:focus {
 }
 
 .decor-1 {
-  top: 16px;
-  left: 16px;
-  font-size: 1.8rem;
+  top: 18px;
+  left: 20px;
+  font-size: 1.5rem;
 }
 
 .decor-2 {
-  top: 54px;
-  left: 18px;
-  font-size: 1.8rem;
-  animation-delay: 0.7s;
+  top: 58px;
+  left: 24px;
+  font-size: 1.6rem;
+  animation-delay: 0.6s;
 }
 
 .decor-3 {
-  top: 92px;
-  left: 18px;
-  font-size: 1.8rem;
+  top: 100px;
+  left: 24px;
+  font-size: 1.5rem;
   animation-delay: 1.2s;
 }
 
 .decor-4 {
-  top: 132px;
-  left: 18px;
-  font-size: 1.7rem;
+  bottom: 62px;
+  right: 22px;
+  font-size: 1.5rem;
   animation-delay: 1.7s;
 }
 
 .decor-5 {
-  right: 18px;
-  bottom: 18px;
-  font-size: 1.9rem;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.7rem;
   animation-delay: 2s;
 }
 
@@ -458,19 +457,19 @@ textarea:focus {
 }
 
 .spark-1 {
-  top: 38px;
+  top: 34px;
   right: 60px;
 }
 
 .spark-2 {
   top: 120px;
-  right: 28px;
+  right: 30px;
   animation-delay: 1s;
 }
 
 .spark-3 {
-  bottom: 64px;
-  left: 54px;
+  bottom: 85px;
+  left: 55px;
   animation-delay: 1.8s;
 }
 
@@ -484,15 +483,9 @@ textarea:focus {
 }
 
 @keyframes floatDecor {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }
 
 @keyframes sparkle {
@@ -505,7 +498,6 @@ textarea:focus {
     transform: scale(1.2);
   }
 }
-
 @media (max-width: 700px) {
   .premium-postcard {
     min-height: 300px;
